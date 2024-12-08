@@ -78,7 +78,7 @@ func getAnswers(input string) (int64, int64) {
 func isOrdered(rules map[int64][]int64, update []int64) bool {
 	for i := range update {
 		for j := i + 1; j < len(update); j++ {
-			if !utils.Contains(rules[update[i]], update[j]) {
+			if !utils.IntContains(rules[update[i]], update[j]) {
 				return false
 			}
 		}
@@ -88,7 +88,7 @@ func isOrdered(rules map[int64][]int64, update []int64) bool {
 
 func orderUpdate(rules map[int64][]int64, update []int64) []int64 {
 	sort.Slice(update, func(i, j int) bool {
-		if utils.Contains(rules[update[i]], update[j]) {
+		if utils.IntContains(rules[update[i]], update[j]) {
 			return true
 		}
 		return false

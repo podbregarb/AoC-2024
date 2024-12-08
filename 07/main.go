@@ -13,8 +13,6 @@ var testInput string
 //go:embed input.txt
 var input string
 
-var DIRECTIONS = []string{">", "<", "^", "v"}
-
 func main() {
 	fmt.Println("Test input")
 	printAnswers(testInput)
